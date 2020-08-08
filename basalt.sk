@@ -1,0 +1,52 @@
+options:
+  v: 1.0Alpha
+#! BASALT as a Skript collection of random- and hopefully useful- Skript things! | NOTE: a lot of these are already in Skript, but just made quicker. But some are unique!
+import:
+  com.palmergames.bukkit.towny.object.Town
+# Remove "example" from "ehudhaEXAMPLEiuahwd"
+function remString(toRem: text, from: text) :: text:
+    replace all {_toRem} in {_from} with ""
+    return {_from}
+# Example...
+
+#command /example <text>:
+#   trigger:
+#       if arg-1 contains "uwu-is-bad":
+#           set {_t} to remString("uwu-is-bad", "arg-1")
+#               message "&cI think you mean &e%{_t}%."
+
+# Make an entity attack another entity (Skript-mirror needed.) // Works on all hostile mobs, few passive mobs.
+
+function entityAttack(m1: entity, m2: entity):
+    {_m1}.setTarget({_m2})
+    {_m2}.setTarget({_m1})
+# Example...
+
+
+#...entityAttack(last spawned entity, arg-1)
+
+function getUUID(p: player) :: text:
+  set {_u} to uuid of {_p}
+  return {_u} parsed as player
+# Example...
+
+# set {_p} to getUUID(player)
+
+expression basalt version:
+  get:
+    return {_v}
+expression town[y] hometown (for|of) %$offlineplayer%:
+  get:
+    return TownyAPI.getInstance().getDataSource().getTown(%expression-1%.getTown())
+
+# if you have MiSK, this is useless, and you will probably wanna remove it.
+effect [make|enable] %$player%'s fly:
+  trigger:
+    %expression-1%.setAllowFlight(true)
+effect [stop|disable] %$player%'s fly:
+  trigger:
+    %expression-1%.setAllowFlight(false)
+expression %$player% has flight on:
+  get:
+    return %expression-1%.isFlying()
+# you can use if player has flight on == true:
