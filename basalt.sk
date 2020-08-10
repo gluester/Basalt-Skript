@@ -13,7 +13,7 @@ function remString(toRem: text, from: text) :: text:
 #   trigger:
 #       if arg-1 contains "uwu-is-bad":
 #           set {_t} to remString("uwu-is-bad", "arg-1")
-#               message "&cI think you mean &e%{_t}%."
+#           message "&cI think you mean &e%{_t}%."
 
 # Make an entity attack another entity (Skript-mirror needed.) // Works on all hostile mobs, few passive mobs.
 
