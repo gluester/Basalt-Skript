@@ -25,9 +25,9 @@ function entityAttack(m1: entity, m2: entity):
 
 #...entityAttack(last spawned entity, arg-1)
 
-function getUUID(p: player) :: text:
+function getUUID(p: player) :: player:
   set {_u} to uuid of {_p}
-  return {_u} parsed as player
+  return {_u}
 # Example...
 
 # set {_p} to getUUID(player)
@@ -49,4 +49,4 @@ effect [stop|disable] %$player%'s fly:
 expression %$player% has flight on:
   get:
     return %expression-1%.isFlying()
-# you can use if player has flight on == true:
+# you can use if player has flight on == true
