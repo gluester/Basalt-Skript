@@ -7,3 +7,7 @@ Basalt is a Skript API, which acts like a Skript addon, adding random things. En
 * To add a lot of MiSK's functionality.
 * If possible, to add some of SkQuery's functionality.
 * Possibly JSON?
+## Updates Coming Soon
+🔧 Fixes to Skript bugs using BasaltAPI.
+🌟 New Syntax from BasaltAPI.
+📃 A few JSON editions.
