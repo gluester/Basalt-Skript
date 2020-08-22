@@ -48,5 +48,5 @@ effect [stop|disable] %$player%'s fly:
     %expression-1%.setAllowFlight(false)
 expression %$player% has flight on:
   get:
-    return %expression-1%.isFlying()
+    return %expression-1%.getAllowFlight()
 # you can use if player has flight on == true
