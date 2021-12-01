@@ -7,6 +7,11 @@ import:
 function remString(toRem: text, from: text) :: text:
     replace all {_toRem} in {_from} with ""
     return {_from}
+effect remove string %$text% [of|in] %$text%:
+  set {_e} to expression-1
+  set {_b} to expression-2
+  replace all {_e} in {_b} with ""
+  return {_b}
 # Example...
 
 #command /example <text>:
@@ -14,7 +19,10 @@ function remString(toRem: text, from: text) :: text:
 #       if arg-1 contains "not pog":
 #           set {_t} to remString("not pog", "%arg-1%")
 #           message "&cI think you mean &e%{_t}%."
-
+# OR
+# ...
+#   remove string "h" in "fwaeuifhuaw"
+# returns "fwaeuifuaw"
 # Make an entity attack another entity (Skript-mirror needed.) // Works on all hostile mobs, few passive mobs.
 
 function entityAttack(m1: entity, m2: entity):
@@ -43,10 +51,13 @@ expression town[y] hometown (for|of) %$offlineplayer%:
 effect [make|enable] %$player%'s fly:
   trigger:
     %expression-1%.setAllowFlight(true)
+    
 effect [stop|disable] %$player%'s fly:
   trigger:
     %expression-1%.setAllowFlight(false)
+
 expression %$player% has flight on:
   get:
     return %expression-1%.getAllowFlight()
+
 # you can use if player has flight on == true
