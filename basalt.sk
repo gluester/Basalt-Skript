@@ -42,7 +42,7 @@ function getUUID(p: player) :: player:
 
 expression basalt version:
   get:
-    return {_v}
+    return {@v}
 expression town[y] hometown (for|of) %$offlineplayer%:
   get:
     return TownyAPI.getInstance().getDataSource().getTown(%expression-1%.getTown())
