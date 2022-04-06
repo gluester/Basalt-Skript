@@ -1,4 +1,4 @@
-Friendly reminder that everything here is completely untested by 2020 me (aswell as the one change I did recently) 
+<b>Friendly reminder that everything here is completely untested by 2020 me (aswell as the one change I did recently)</b>
 
 # Basalt-Skript
 Basalt is a Skript API, which acts like a Skript addon, adding random things. End goal is to replace at least one Skript plugin.
